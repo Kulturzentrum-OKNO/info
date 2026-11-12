@@ -96,6 +96,9 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .meta { color: var(--muted); font-size: 15px; display: block; margin-top: 2px; font-weight: 400; }
 
 /* courses */
+.course { position: relative; }
+.sticker { position: absolute; top: -13px; right: 54px; z-index: 2; background: var(--red); color: #fff; font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; line-height: 1; padding: 7px 12px 6px; transform: rotate(3deg); box-shadow: 2px 2px 0 var(--ink); pointer-events: none; }
+@media (max-width: 600px) { .sticker { right: 14px; top: -12px; font-size: 13px; } }
 .course summary { grid-template-columns: 1fr auto; }
 .course summary::after { grid-column: 2; grid-row: 1 / span 2; }
 .course .title { font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: 25px; line-height: 1.1; }
@@ -266,6 +269,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-peach">
         <summary>
+          <span class="sticker">Plätze frei</span>
           <span class="title">Small Stories Theater Kids</span>
           <span class="meta">Theaterstudio · 6–9 Jahre · Mo und Mi, 16:45–18:30</span>
           <span class="price">100 € im Monat</span>
@@ -284,6 +288,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-lilac">
         <summary>
+          <span class="sticker">Plätze frei</span>
           <span class="title">Bewegung. Sprache. Theater.</span>
           <span class="meta">Entwicklungskurs · 3,5–7 Jahre · Di und Sa</span>
           <span class="price">100 € im Monat</span>
@@ -303,6 +308,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-blue">
         <summary>
+          <span class="sticker">Plätze frei</span>
           <span class="title">Musikwerkstatt</span>
           <span class="meta">Musik für Kinder · 6–9 Jahre · Sa, 14:00–15:30</span>
           <span class="price">100 € im Monat, 80 € für Kinder der russischen Samstagsschule des BGFF e.V.</span>
@@ -323,6 +329,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-white">
         <summary>
+          <span class="sticker">Plätze frei</span>
           <span class="title">Small Stories Theater Lab</span>
           <span class="meta">Kreativ- und Theaterstudio für Erwachsene · Mo und Mi, 19:00–21:30</span>
           <span class="price">120 € im Monat</span>

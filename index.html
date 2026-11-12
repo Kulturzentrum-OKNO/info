@@ -96,6 +96,9 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .meta { color: var(--muted); font-size: 15px; display: block; margin-top: 2px; font-weight: 400; }
 
 /* courses */
+.course { position: relative; }
+.sticker { position: absolute; top: -13px; right: 54px; z-index: 2; background: var(--red); color: #fff; font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; line-height: 1; padding: 7px 12px 6px; transform: rotate(3deg); box-shadow: 2px 2px 0 var(--ink); pointer-events: none; }
+@media (max-width: 600px) { .sticker { right: 14px; top: -12px; font-size: 13px; } }
 .course summary { grid-template-columns: 1fr auto; }
 .course summary::after { grid-column: 2; grid-row: 1 / span 2; }
 .course .title { font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: 25px; line-height: 1.1; }
@@ -266,6 +269,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-peach">
         <summary>
+          <span class="sticker">Открыта запись</span>
           <span class="title">Small Stories Theater Kids</span>
           <span class="meta">Театральная студия · 6–9 лет · пн и ср, 16:45–18:30</span>
           <span class="price">Абонемент 100 € в месяц</span>
@@ -284,6 +288,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-lilac">
         <summary>
+          <span class="sticker">Открыта запись</span>
           <span class="title">Движение. Речь. Театр.</span>
           <span class="meta">Развивающие занятия · 3,5–7 лет · вт и сб</span>
           <span class="price">Абонемент 100 € в месяц</span>
@@ -303,6 +308,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-blue">
         <summary>
+          <span class="sticker">Открыта запись</span>
           <span class="title">Музыкальная мастерская</span>
           <span class="meta">Музыка для детей · 6–9 лет · сб, 14:00–15:30</span>
           <span class="price">Абонемент 100 € в месяц, 80 € для учеников русской субботней школы BGFF e.V.</span>
@@ -323,6 +329,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
       <details class="course c-white">
         <summary>
+          <span class="sticker">Открыта запись</span>
           <span class="title">Small Stories Theater Lab</span>
           <span class="meta">Студия творчества и театра для взрослых · пн и ср, 19:00–21:30</span>
           <span class="price">Абонемент 120 € в месяц</span>
