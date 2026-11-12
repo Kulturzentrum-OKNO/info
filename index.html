@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kulturzentrum OKNO</title>
+<link rel="alternate" hreflang="de" href="de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: one left-aligned column, black type on white. Red marks the events, course colours repeat the Instagram cards. */
+  --ink: #111111;
+  --paper: #ffffff;
+  --muted: #5f5f5f;
+  --soft: #e4e4e4;
+  --red: #e3231b;
+  --peach: #ebb89b;
+  --lilac: #dcccf0;
+  --blue: #b8c5f0;
+  --yellow: #f5e1a0;
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --display: "Oswald", "Arial Narrow", Impact, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+body { font-family: var(--font); font-size: 17px; line-height: 1.55; text-align: left; }
+a { color: inherit; }
+a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+header { border-bottom: 2px solid var(--ink); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 14px 20px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img { width: 52px; height: auto; display: block; }
+.brand span { font-weight: 700; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; }
+nav { display: flex; gap: 6px 20px; flex-wrap: wrap; font-weight: 500; font-size: 15px; }
+nav a { text-decoration: none; border-bottom: 2px solid transparent; }
+nav a.lang { font-weight: 700; border: 2px solid var(--ink); padding: 0 6px; }
+nav a.lang:hover { background: var(--ink); color: var(--paper); }
+nav a:hover { border-bottom-color: var(--ink); }
+
+.hero { padding: 52px 20px 44px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
+.ph { background: var(--soft); border: 2px dashed #b5b5b5; color: var(--muted); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 14px; padding: 12px; }
+.hero-photo { aspect-ratio: 3 / 2; width: 100%; margin-top: 0; object-position: 50% 60%; object-fit: cover; display: block; }
+#zhizn h2 { margin-bottom: 8px; }
+.gallery { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 0 14px; -webkit-overflow-scrolling: touch; }
+.gallery > * { flex: none; width: min(78vw, 340px); height: auto; aspect-ratio: 4 / 3; scroll-snap-align: start; object-fit: cover; display: block; }
+.gallery video { background: #111; }
+.gal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.gal-btn { font: inherit; font-size: 20px; width: 44px; height: 44px; margin-left: 8px; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); cursor: pointer; }
+.gal-btn:hover { background: var(--ink); color: var(--paper); }
+.teacher { display: flex; align-items: center; gap: 18px; }
+.ava { flex: 0 0 120px; width: 120px; height: 150px; border-radius: 14px; object-fit: cover; display: block; }
+.where { font-weight: 700; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 18px; }
+.where span { color: var(--red); }
+h1 { font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: clamp(40px, 9vw, 68px); line-height: 1; margin: 0 0 20px; text-wrap: balance; }
+.lead { font-size: clamp(18px, 2.6vw, 21px); max-width: 34em; margin: 0 0 26px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 13px 22px; background: var(--ink); color: var(--paper); font-weight: 700; font-size: 16px; text-decoration: none; border: 2px solid var(--ink); }
+.btn:hover { background: var(--paper); color: var(--ink); }
+.btn.ghost { background: var(--paper); color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--paper); }
+.btn.small { padding: 9px 16px; font-size: 15px; }
+
+section { padding: 44px 0; border-top: 2px solid var(--ink); }
+h2 { font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: clamp(32px, 6vw, 48px); line-height: 1.05; margin: 0 0 22px; text-wrap: balance; }
+#afisha h2 { color: var(--red); }
+h3 { margin: 0; }
+.note { color: var(--muted); font-size: 15px; margin: 14px 0 0; }
+.sub { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 26px 0 10px; }
+
+/* details blocks */
+details { border: 2px solid var(--ink); margin: 0 0 12px; background: var(--paper); }
+summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: auto 1fr auto; gap: 4px 20px; align-items: center; padding: 16px 18px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-weight: 800; font-size: 26px; line-height: 1; grid-column: 3; grid-row: 1; }
+details[open] > summary::after { content: "–"; }
+details[open] > summary { border-bottom: 2px solid var(--ink); }
+.body { padding: 18px 18px 22px; }
+.body p { margin: 0 0 14px; max-width: 40em; }
+.body p:last-child { margin-bottom: 0; }
+.body h4 { margin: 20px 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
+.body h4:first-child { margin-top: 0; }
+.cta { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+
+/* events */
+.ev summary { grid-template-columns: 96px 1fr auto; }
+.ev.plain summary { cursor: default; grid-template-columns: 96px 1fr; }
+.ev.plain summary::after { content: none; }
+.date { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1; color: var(--red); }
+.date small { display: block; font-family: var(--font); font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 6px; letter-spacing: 0.04em; }
+.title { font-weight: 800; font-size: 19px; line-height: 1.25; }
+.meta { color: var(--muted); font-size: 15px; display: block; margin-top: 2px; font-weight: 400; }
+
+/* courses */
+.course summary { grid-template-columns: 1fr auto; }
+.course summary::after { grid-column: 2; grid-row: 1 / span 2; }
+.course .title { font-family: var(--display); text-transform: uppercase; font-weight: 700; font-size: 25px; line-height: 1.1; }
+.course .meta { color: var(--ink); font-size: 15px; }
+.price { grid-column: 1; font-weight: 700; font-size: 15px; }
+.c-peach > summary, .c-peach .body { background: var(--peach); }
+.c-lilac > summary, .c-lilac .body { background: var(--lilac); }
+.c-blue > summary, .c-blue .body { background: var(--blue); }
+.c-white > summary .title::before { content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--red); margin-right: 10px; border: 2px solid var(--ink); vertical-align: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 4px 0 16px; padding: 0; }
+.tags li { border: 1.5px solid var(--ink); border-radius: 999px; padding: 2px 12px; font-size: 14.5px; }
+.facts { display: grid; gap: 10px; margin: 0 0 16px; }
+.fact { background: var(--paper); border-radius: 14px; padding: 12px 16px; max-width: 40em; }
+.fact b { display: block; font-family: var(--display); text-transform: uppercase; font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+
+.prices { width: 100%; border-collapse: collapse; margin: 0 0 8px; font-size: 16px; }
+.prices th, .prices td { padding: 10px 0; border-bottom: 1px solid var(--soft); vertical-align: top; text-align: left; }
+.prices th { font-weight: 700; padding-right: 16px; }
+.prices td:last-child { white-space: nowrap; }
+.offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px 32px; margin-top: 20px; }
+.offers h3 { font-family: var(--display); text-transform: uppercase; font-size: 22px; margin-bottom: 4px; }
+.offers p { margin: 0; }
+
+.rules .body ul { margin: 0 0 14px; padding-left: 20px; max-width: 40em; }
+.rules .body li { margin-bottom: 6px; }
+.rules summary { grid-template-columns: 1fr auto; }
+.rules summary::after { grid-column: 2; }
+
+.find { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px 40px; }
+.find h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.find p { margin: 0 0 8px; }
+
+footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 560px) {
+  .ev summary, .ev.plain summary { grid-template-columns: 1fr auto; }
+  .ev.plain summary { grid-template-columns: 1fr; }
+  .ev .date { grid-column: 1 / span 2; }
+  .ev.plain .date { grid-column: 1; }
+  .ev summary > span:nth-child(2) { grid-column: 1; }
+  .ev summary::after { grid-column: 2; grid-row: 2; }
+  .hero { padding-top: 34px; grid-template-columns: 1fr; }
+  .hero-photo { aspect-ratio: 4 / 3; gap: 0; grid-row: 1; margin: 0; }
+  .prices td:last-child { white-space: normal; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, nav a { transition: background 0.15s, color 0.15s, border-color 0.15s; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img src="logo.png" alt="OKNO"><span>Kulturzentrum</span></a>
+    <nav aria-label="Меню">
+      <a href="#afisha">Афиша</a>
+      <a href="#kurse">Курсы</a>
+      <a href="#pravila">Правила</a>
+      <a href="#miete">Аренда</a>
+      <a href="#kontakt">Контакты</a>
+      <a class="lang" href="de.html" lang="de" hreflang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+    <h1>Kulturzentrum OKNO</h1>
+    <p class="where">Brunnenstraße 69 <span>·</span> Berlin-Mitte <span>·</span> U8 Voltastraße</p>
+    <p class="lead">Курсы для детей и взрослых, лекции, концерты и кино в Берлин-Митте. Занятия и события на русском языке, немецкоязычные группы открываем по запросу.</p>
+    <div class="actions">
+      <a class="btn" href="https://ig.me/m/okno_kultur">Записаться в Instagram</a>
+      <a class="btn ghost" href="https://t.me/okno_kultur_admin">Написать в Telegram</a>
+      <a class="btn ghost" href="#kontakt">Как нас найти</a>
+    </div>
+    </div>
+  </div>
+
+  <section id="zhizn">
+    <div class="wrap">
+      <h2>Как у нас</h2>
+      <div class="gal-head"><p class="note" style="margin:0">Листайте вбок</p><span><button class="gal-btn" type="button" data-dir="-1" aria-label="Назад">←</button><button class="gal-btn" type="button" data-dir="1" aria-label="Вперёд">→</button></span></div>
+      <div class="gallery">
+        <video src="img/hall.mp4" poster="img/hall_poster.jpg" autoplay muted loop playsinline aria-label="Зал OKNO перед показом фильма"></video>
+        <img src="img/g1.jpg" alt="Вечеринка в OKNO" loading="lazy">
+        <video src="img/craft.mp4" poster="img/craft_poster.jpg" autoplay muted loop playsinline aria-label="Творческая мастерская в OKNO"></video>
+        <img src="img/kids.jpg" alt="Дети на занятии театральной студии у винтовой лестницы" loading="lazy">
+        <video src="img/guitar.mp4" poster="img/guitar_poster.jpg" autoplay muted loop playsinline aria-label="Акустический концерт в OKNO"></video>
+        <img src="img/g9.jpg" alt="Концерт в OKNO" loading="lazy" style="object-position:50% 40%">
+      </div>
+    </div>
+  </section>
+
+  <section id="afisha">
+    <div class="wrap">
+      <h2>Афиша</h2>
+
+      <details class="ev">
+        <summary>
+          <span class="date">19.11<small>ЧТ · 18:30</small></span>
+          <span><span class="title">Культура и история цвета</span><span class="meta">Лекция Александра Шереметева · в зале и онлайн</span></span>
+        </summary>
+        <div class="body">
+          <p>Первая лекция цикла «Цвет: от истории к ощущению». В зале OKNO и онлайн.</p>
+          <p>Гомер ни разу не назвал море синим. У него оно «винноликое», а слова для синего в языке не было вовсе. В XIX веке это всерьёз приняли за доказательство того, что древние греки не различали цвет. Вопрос, который тогда возник, не закрыт до сих пор: видим ли мы цвет таким, какой он есть, или таким, каким нас научили его видеть?</p>
+          <p>Почему первым цветом, которому человек придал значение, стал красный, и почему охрой посыпали умерших за десятки тысяч лет до появления письменности? Почему синий в языках мира, как правило, получает имя последним? Почему пурпур оказался высшим цветом и в Риме, и в Китае, хотя причины были противоположными? Как законы против роскоши привели в Европе к чёрному испанского двора, а в Японии эпохи Эдо к «48 коричневым и 100 серым»? И почему японские придворные разговаривали одеждой?</p>
+          <p>Каждый день мы много раз выбираем цвет: что надеть, что купить, в какой цвет покрасить стены. Почти ни один из этих выборов не принадлежит нам целиком, за каждым стоят тысячелетия чужих договорённостей. Приходите узнать, чьи решения вы носите.</p>
+          <h4>Об авторе</h4>
+          <p>Александр Шереметев – историк искусства и куратор, специалист по японскому искусству, истории цвета и костюма. Его PhD, защищённая в Эксетерском университете, посвящена семантике цвета при японском дворе эпохи Хэйан. Был ведущим консультантом выставки «Кимоно: от Киото до подиума» в Музее Виктории и Альберта, консультировал выставку «Самураи» в Британском музее и отвечал за японскую часть экспозиции Музея азиатского искусства в Гумбольдт-форуме.</p>
+          <h4>Где и как</h4>
+          <p>В зале: Kulturzentrum OKNO, Brunnenstraße 69, Berlin (U8 Voltastraße). Онлайн: трансляция для тех, кто не в Берлине, при покупке выберите билет на онлайн-трансляцию. Язык лекции: русский.</p>
+          <div class="cta"><a class="btn small" href="https://fienta.com/ru/kultura-i-istoriya-cveta-lekciya-aleksandra-sheremeteva">Купить билет на Fienta</a></div>
+        </div>
+      </details>
+
+      <details class="ev plain">
+        <summary>
+          <span class="date">21.11<small>СБ · 18:30</small></span>
+          <span><span class="title">Кинолекция от Easy Pieces</span><span class="meta">Тему объявим позже</span></span>
+        </summary>
+      </details>
+
+      <details class="ev">
+        <summary>
+          <span class="date">26.11<small>ЧТ · 18:30</small></span>
+          <span><span class="title">Современная жизнь цвета</span><span class="meta">Лекция Ольги Линден · в зале и онлайн</span></span>
+        </summary>
+        <div class="body">
+          <p>Вторая лекция цикла «Цвет: от истории к ощущению». В зале OKNO и онлайн.</p>
+          <p>Почему один и тот же цвет может вызывать совершенно противоположные чувства? Почему красный бывает не только страстным, но и сдержанным, зелёный не всегда успокаивает, а белый далеко не всегда нейтральный?</p>
+          <p>Мы привыкли считать цвет вопросом вкуса. Но насколько наши предпочтения действительно принадлежат нам? Почему одни цвета становятся символами эпохи, другие выходят из моды, а потом возвращаются?</p>
+          <p>На лекции поговорим о том, как цвет живёт и работает сегодня: о его эмоциональном воздействии, отношениях со светом, пространством и фактурой, о том, как он проявляет себя в интерьере, одежде и окружающем нас мире. И попробуем понять, почему цвет – это не только то, что мы видим, но и то, что мы чувствуем.</p>
+          <h4>Об авторе</h4>
+          <p>Ольга Линден – стилист и декоратор интерьера. С 2014 года работает с частными клиентами, компаниями, артистами, проектами в кино и моде как стилист, художник по костюмам и декоратор. С 2021 года живёт и практикует в Берлине. В основе её работы – внимательное исследование запроса: не только того, как всё должно выглядеть, но и того, какое состояние это должно создавать.</p>
+          <h4>Где и как</h4>
+          <p>В зале: Kulturzentrum OKNO, Brunnenstraße 69, Berlin (U8 Voltastraße). Онлайн: трансляция для тех, кто не в Берлине, при покупке выберите билет на онлайн-трансляцию. Язык лекции: русский.</p>
+          <div class="cta"><a class="btn small" href="https://fienta.com/ru/212452">Купить билет на Fienta</a></div>
+        </div>
+      </details>
+
+      <details class="ev">
+        <summary>
+          <span class="date">04.12<small>ПТ · 18:30</small></span>
+          <span><span class="title">Пути авангарда</span><span class="meta">Лекция Надежды Ворониной</span></span>
+        </summary>
+        <div class="body">
+          <p>Авангард развивался одновременно в Европе и в России: неровно, по-разному, и всё же с общей чертой. Это была свежая передовая линия, новый подход к искусству, новые медиа и попытка поставить под сомнение академическое образование и «руку художника». Художники путешествовали, знакомились, подсматривали друг у друга и перенимали чужой опыт. Для авангардиста не было ничего запретного: любое действие могло стать актом искусства.</p>
+          <p>На лекции искусствовед и преподаватель Надежда Воронина проследит маршруты авангарда от Кандинского до «Бубнового валета» и «Ослиного хвоста», от групп русских художников за рубежом до борьбы Шагала с Малевичем.</p>
+          <h4>Об авторе</h4>
+          <p>Надежда Воронина – искусствовед, в прошлом доцент Российской академии художеств. Работала в науке в Петербурге и Мюнхене. В диссертационном исследовании сосредоточилась на рубеже веков, институциях искусства и группе русских художников в Мюнхене.</p>
+          <h4>Где</h4>
+          <p>OKNO, Brunnenstraße 69 (U8 Voltastraße).</p>
+          <div class="cta"><a class="btn small" href="https://fienta.com/ru/puti-avangarda">Купить билет на Fienta</a></div>
+        </div>
+      </details>
+
+      <p class="note">Билеты на лекции продаются на <a href="https://fienta.com/?q=OKNO">Fienta</a>, ссылка также есть в профиле <a href="https://www.instagram.com/okno_kultur/">Instagram</a>. Новые события и точные даты появляются там же. Кино в OKNO проходит вместе с киноклубом Easy Pieces.</p>
+    </div>
+  </section>
+
+  <section id="kurse">
+    <div class="wrap">
+      <h2>Курсы</h2>
+      <p class="lead" style="margin-bottom:6px">Пробное занятие в любую группу – 30 €. Нажмите на курс, чтобы прочитать подробности. О каждом преподавателе подробнее рассказываем в нашем <a href="https://www.instagram.com/okno_kultur/">Instagram</a>.</p>
+
+      <p class="sub">Детские курсы</p>
+
+      <details class="course c-peach">
+        <summary>
+          <span class="title">Small Stories Theater Kids</span>
+          <span class="meta">Театральная студия · 6–9 лет · пн и ср, 16:45–18:30</span>
+          <span class="price">Абонемент 100 € в месяц</span>
+        </summary>
+        <div class="body">
+          <p>Здесь рождаются маленькие истории. Дети мастерят кукол, примеряют маски, оживляют тени на стене и придумывают сказки, которые потом сами разыгрывают. А по дороге учатся говорить ясно и смело, слышать свой голос, чувствовать тело и петь.</p>
+          <ul class="tags"><li>актёрское мастерство</li><li>речь и дикция</li><li>голос</li><li>песня</li><li>движение и тело</li><li>театр теней</li><li>маски</li><li>куклы</li><li>сторителлинг</li></ul>
+          <div class="facts">
+            <div class="fact"><b>Гости студии</b>Дважды в месяц к нам заглядывают друзья из мира театра. С художником-кукольником дети создают своих героев, а с педагогом по вокалу разучивают песни.</div>
+            <div class="fact"><b>Наши спектакли</b>Из детских фантазий вырастают настоящие спектакли. Мы ставим их вместе и играем для мам, пап, бабушек и всех, кто нам дорог.</div>
+          </div>
+          <p class="teacher"><img class="ava" src="img/maria.jpg" alt="Мария Ясиновер"><span><b>Ведёт Мария Ясиновер</b>, режиссёр, актриса и педагог.</span></p>
+          <div class="cta"><a class="btn small" href="https://ig.me/m/okno_kultur">Записаться в Instagram</a><a class="btn small ghost" href="https://t.me/okno_kultur_admin">Telegram</a></div>
+        </div>
+      </details>
+
+      <details class="course c-lilac">
+        <summary>
+          <span class="title">Движение. Речь. Театр.</span>
+          <span class="meta">Развивающие занятия · 3,5–7 лет · вт и сб</span>
+          <span class="price">Абонемент 100 € в месяц</span>
+        </summary>
+        <div class="body">
+          <p>Здесь театр не готовит к сцене, а помогает ребёнку расти. В игре, движении и маленьких этюдах дети учатся слушать и слышать, ясно говорить, владеть своим телом и дружить. И становятся увереннее в новых ситуациях, что особенно пригодится в школе.</p>
+          <ul class="tags"><li>актёрская игра</li><li>внимание</li><li>речь и словарный запас</li><li>координация</li><li>общение</li><li>уверенность</li><li>подготовка к школе</li></ul>
+          <div class="facts">
+            <div class="fact"><b>Две группы</b>3,5–5 лет, 45 минут: вт 16:45 и сб 10:30.<br>6–7 лет, 1 час: вт 17:45 и сб 11:30.</div>
+            <div class="fact"><b>На русском</b>Занятия проходят на русском языке, поэтому дети заодно пополняют словарный запас.</div>
+            <div class="fact"><b>Связь с родителями</b>После каждого занятия Анастасия рассказывает родителям, как прошёл урок, и подсказывает, на что обратить внимание и как поддержать ребёнка дома.</div>
+          </div>
+          <p class="teacher"><img class="ava" src="img/nastya.jpg" alt="Анастасия Пентилюк"><span><b>Ведёт Анастасия Пентилюк</b>, актриса театра и кино, магистр психологии, член немецкой ассоциации театральных терапевтов. Занимается детской театральной педагогикой с 2012 года.</span></p>
+          <div class="cta"><a class="btn small" href="https://ig.me/m/okno_kultur">Записаться в Instagram</a><a class="btn small ghost" href="https://t.me/okno_kultur_admin">Telegram</a></div>
+        </div>
+      </details>
+
+      <details class="course c-blue">
+        <summary>
+          <span class="title">Музыкальная мастерская</span>
+          <span class="meta">Музыка для детей · 6–9 лет · сб, 14:00–15:30</span>
+          <span class="price">Абонемент 100 € в месяц, 80 € для учеников русской субботней школы BGFF e.V.</span>
+        </summary>
+        <div class="body">
+          <p>Здесь музыка начинается с игры. С первого занятия дети берут в руки настоящие инструменты: маленькие кахоны, бубны, маракасы, колокольчики и ксилофоны. Учатся чувствовать ритм и настроение музыки, слушать друг друга, петь и импровизировать.</p>
+          <ul class="tags"><li>ритм</li><li>слух</li><li>голос и песня</li><li>инструменты Орфа</li><li>сольфеджио</li><li>импровизация</li><li>движение</li><li>артистизм</li></ul>
+          <div class="facts">
+            <div class="fact"><b>Легко и без давления</b>С сольфеджио и первыми нотами знакомимся через игру и весёлые упражнения, а не через зубрёжку.</div>
+            <div class="fact"><b>Свой ансамбль</b>Каждый ребёнок находит свой инструмент, а вместе мы собираем маленький ансамбль и готовим выступления.</div>
+          </div>
+          <p class="teacher"><img class="ava" src="img/nika.jpg" alt="Ника"><span><b>Ведёт Ника</b>, музыкант, вокалистка и автор песен, сертифицированный музыкальный педагог (EMP). Выступает с детства и знает, что музыка – это прежде всего свобода и радость.</span></p>
+          <div class="cta"><a class="btn small" href="https://ig.me/m/okno_kultur">Записаться в Instagram</a><a class="btn small ghost" href="https://t.me/okno_kultur_admin">Telegram</a></div>
+        </div>
+      </details>
+
+      <p class="sub">Для взрослых</p>
+
+      <details class="course c-white">
+        <summary>
+          <span class="title">Small Stories Theater Lab</span>
+          <span class="meta">Студия творчества и театра для взрослых · пн и ср, 19:00–21:30</span>
+          <span class="price">Абонемент 120 € в месяц</span>
+        </summary>
+        <div class="body">
+          <p>Студия для тех, кто хочет выдохнуть и побыть в творческом процессе без ожиданий, без оценок и без необходимости что-то уметь заранее. Здесь можно играть, пробовать новое, слушать себя и быть разными. Мы рады людям любого возраста.</p>
+          <ul class="tags"><li>актёрское мастерство</li><li>движение</li><li>голос</li><li>театр теней</li><li>театр кукол</li><li>маски</li><li>клоунада</li><li>сторителлинг</li><li>арт-терапия</li></ul>
+          <p>Через методы театра и арт-терапии мы учимся подбирать ключик к своему играющему ребёнку и своей креативности.</p>
+          <div class="facts">
+            <div class="fact"><b>Показы</b>Наши этюды и идеи вырастают в показы, которые мы играем и для друзей, и для широкой публики.</div>
+            <div class="fact"><b>Гости</b>Каждый месяц приходят приглашённые профессионалы театра.</div>
+          </div>
+          <p class="teacher"><img class="ava" src="img/maria.jpg" alt="Мария Ясиновер"><span><b>Ведёт Мария Ясиновер</b>, режиссёр, актриса и педагог.</span></p>
+          <div class="cta"><a class="btn small" href="https://ig.me/m/okno_kultur">Записаться в Instagram</a><a class="btn small ghost" href="https://t.me/okno_kultur_admin">Telegram</a></div>
+        </div>
+      </details>
+
+      <p class="sub">Стоимость и скидки</p>
+      <table class="prices">
+        <tbody>
+          <tr><th>Small Stories Theater Kids</th><td>100 € в месяц</td></tr>
+          <tr><th>Движение. Речь. Театр.</th><td>100 € в месяц</td></tr>
+          <tr><th>Музыкальная мастерская</th><td>100 € в месяц</td></tr>
+          <tr><th>Small Stories Theater Lab</th><td>120 € в месяц</td></tr>
+          <tr><th>Любое пробное занятие</th><td>30 €</td></tr>
+        </tbody>
+      </table>
+      <div class="offers">
+        <div>
+          <h3>Семейная скидка</h3>
+          <p>Родитель и ребёнок – скидка 20%.<br>Второй ребёнок в семье – скидка 20%.<br>Третий ребёнок в семье – скидка 30%.</p>
+        </div>
+        <div>
+          <h3>Второй курс для одного человека</h3>
+          <p>Любой второй абонемент в тот же месяц – скидка 20 €.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pravila">
+    <div class="wrap">
+      <h2>Правила посещения курсов</h2>
+
+      <details class="rules">
+        <summary><span class="title">Посещение занятий</span></summary>
+        <div class="body">
+          <h4>Присмотр за ребёнком</h4>
+          <ul>
+            <li>действует только во время самого занятия, с начала и до официального окончания;</li>
+            <li>приводите ребёнка точно к началу и забирайте сразу после окончания: до и после занятия присмотр студией не обеспечивается;</li>
+            <li>в случае ЧП звоните преподавателю;</li>
+            <li>если ребёнка забирает кто-то другой, сообщите об этом заранее, чтобы преподаватель знал, кому передаёт ребёнка.</li>
+          </ul>
+          <h4>Пробное занятие</h4>
+          <p>Перед началом занятий можно посетить одно пробное занятие.</p>
+          <h4>Каникулы и праздники</h4>
+          <p>Во время берлинских школьных каникул и государственных праздников занятия продолжаются. На каникулах культурный центр также предлагает детские лагеря, участники курса могут посещать их со скидкой.</p>
+        </div>
+      </details>
+
+      <details class="rules">
+        <summary><span class="title">Пропуски</span></summary>
+        <div class="body">
+          <h4>Пропуск по своим причинам</h4>
+          <p>Ни возврат оплаты, ни перенос занятия не предусмотрены (см. пояснение об оплате ниже).</p>
+          <h4>Пропуск по болезни</h4>
+          <p>Вы можете один раз в месяц перенести пропущенное занятие. Доступны три варианта:</p>
+          <ul>
+            <li>отработать занятие в другой день в группе вашего преподавателя, если есть свободное место;</li>
+            <li>отработать занятие в другой день в любой другой студии центра, где есть свободные места;</li>
+            <li>перенести стоимость занятия на следующий месяц: при оплате следующего абонемента вы оплачиваете на одно занятие меньше.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="rules">
+        <summary><span class="title">Оплата и отказ от занятий</span></summary>
+        <div class="body">
+          <h4>Оплата вносится до 10-го числа каждого месяца</h4>
+          <p>Это оплата за ваше место в группе, а не за конкретно посещённые занятия. Сумма не меняется ни если вы пропускаете отдельные занятия, ни в месяцы с каникулами.</p>
+          <h4>Отказ от занятий</h4>
+          <ul>
+            <li>оформляется письменно (по email, в WhatsApp, в Telegram или от руки) до 10-го числа месяца;</li>
+            <li>занятия прекращаются с конца этого месяца, оплата за текущий месяц при этом всё равно вносится;</li>
+            <li>если письменный отказ не подан, участие и оплата продолжаются автоматически.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="miete">
+    <div class="wrap">
+      <h2>Аренда зала</h2>
+      <p class="lead" style="margin-bottom:10px">Зал можно арендовать для лекций, репетиций, мастер-классов и камерных событий. Условия для некоммерческих и коммерческих мероприятий разные.</p>
+      <p class="note" style="margin-top:0">Напишите нам в <a href="https://www.instagram.com/okno_kultur/">Instagram</a>, на почту <a href="mailto:okno@bgff.de">okno@bgff.de</a> или в <a href="https://t.me/okno_kultur_admin">Telegram</a>, и мы пришлём условия.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <h2>Как нас найти</h2>
+      <div class="find">
+        <div>
+          <h3>Адрес</h3>
+          <p>Kulturzentrum OKNO<br>Brunnenstraße 69<br>13355 Berlin-Mitte<br>U8 Voltastraße</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Brunnenstra%C3%9Fe+69+13355+Berlin">Открыть на карте</a></p>
+        </div>
+        <div>
+          <h3>Запись и вопросы</h3>
+          <p><a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a><br>
+          <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a><br>
+          <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
+          <p class="note" style="margin-top:0">Пишите в личные сообщения или на почту.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Kulturzentrum OKNO – проект BGFF e.V., Берлин</div>
+</footer>
+<script>
+document.querySelectorAll('.gal-btn').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var g = document.querySelector('.gallery');
+    g.scrollBy({ left: Number(b.dataset.dir) * (g.firstElementChild.offsetWidth + 14), behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
