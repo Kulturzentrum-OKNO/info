@@ -118,6 +118,18 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .prices th, .prices td { padding: 10px 0; border-bottom: 1px solid var(--soft); vertical-align: top; text-align: left; }
 .prices th { font-weight: 700; padding-right: 16px; }
 .prices td:last-child { white-space: nowrap; }
+.packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 28px; }
+.pack { border: 2px solid var(--ink); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.pack.c-peach { background: var(--peach); } .pack.c-lilac { background: var(--lilac); } .pack.c-blue { background: var(--blue); }
+.pack .ico { font-size: 26px; line-height: 1; }
+.pack h3 { font-family: var(--display); text-transform: uppercase; font-size: 24px; line-height: 1.05; margin: 4px 0 0; }
+.pack .pp { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1; color: var(--red); }
+.pack .pp small { font-size: 16px; color: var(--ink); font-family: var(--font); font-weight: 500; }
+.pack p { margin: 0; font-size: 16px; }
+.rent-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 36px; }
+.rent-cols h3, #miete h3.s { font-family: var(--display); text-transform: uppercase; font-size: 22px; margin: 18px 0 6px; }
+#miete ul { margin: 0; padding-left: 20px; }
+#miete li { margin-bottom: 4px; }
 .offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px 32px; margin-top: 20px; }
 .offers h3 { font-family: var(--display); text-transform: uppercase; font-size: 22px; margin-bottom: 4px; }
 .offers p { margin: 0; }
@@ -403,9 +415,37 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
 
   <section id="miete">
     <div class="wrap">
-      <h2>Raummiete</h2>
-      <p class="lead" style="margin-bottom:10px">Unseren Saal könnt ihr für Vorträge, Proben, Workshops und kleine Veranstaltungen mieten. Für gemeinnützige und kommerzielle Veranstaltungen gelten unterschiedliche Konditionen.</p>
-      <p class="note" style="margin-top:0">Schreibt uns auf <a href="https://www.instagram.com/okno_kultur/">Instagram</a>, per E-Mail an <a href="mailto:okno@bgff.de">okno@bgff.de</a> oder auf <a href="https://t.me/okno_kultur_admin">Telegram</a>, und wir schicken euch die Konditionen.</p>
+      <h2>Der Raum von OKNO für eure Ideen</h2>
+      <p class="lead" style="margin-bottom:10px">OKNO ist ein gemütlicher Ort, den ihr für eure Vorträge, Workshops, Konzerte, Treffen und Vorführungen nutzen könnt. Wir geben euch gern Raum und Zeit und helfen, wenn ihr möchtet, auch bei der Organisation.</p>
+      <h3 class="s">Was euch erwartet</h3>
+      <p style="margin:0">Ein Raum auf zwei Etagen, im Saal bis zu 40 Gäste. Beamer, Leinwand und Tonanlage sind vorhanden.</p>
+      <h3 class="s">Wählt euer Format (ab 2 Stunden)</h3>
+      <div class="packs">
+        <div class="pack c-peach"><span class="ico">🔑</span><h3>Nur der Saal</h3><div class="pp">20 € <small>/ Stunde</small></div><p>Für alle, die alles selbst machen. Wir geben euch den Raum, ihr füllt ihn mit eurer Veranstaltung. Ohne Technik und ohne Werbung von unserer Seite.</p></div>
+        <div class="pack c-lilac"><span class="ico">🎬</span><h3>Saal mit Technik</h3><div class="pp">30 € <small>/ Stunde</small></div><p>Alles wie oben, plus Beamer, Leinwand und Ton. Ideal für Vorträge, Vorführungen und Präsentationen, die ihr selbst bewerbt.</p></div>
+        <div class="pack c-blue"><span class="ico">✨</span><h3>Alles inklusive</h3><div class="pp">50 € <small>/ Stunde</small></div><p>Saal, Technik und unsere Unterstützung: Wir erzählen auf Instagram, Telegram und der Website von euch, nehmen euch in unsere Digests auf, teilen es mit unseren Partnern und übernehmen den Ticketverkauf.</p></div>
+      </div>
+      <div class="rent-cols">
+        <div>
+          <h3>Dazu buchbar</h3>
+          <ul>
+            <li>Eine Person vor Ort, die eure Gäste empfängt und während der ganzen Veranstaltung da ist: 50 € pauschal.</li>
+            <li>Gezielte Online-Werbung: Das Budget besprechen wir gemeinsam.</li>
+          </ul>
+          <h3>So bucht ihr</h3>
+          <p style="margin:0">Schreibt uns, und wir finden einen Termin für euch: <a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a> · <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a> · <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
+        </div>
+        <div>
+          <h3>Buchung und Stornierung</h3>
+          <ul>
+            <li>Um den Termin zu sichern, zahlt ihr 50 % des Preises an.</li>
+            <li>Die restlichen 50 % zahlt ihr eine Woche vor der Veranstaltung.</li>
+            <li>Kostenlos stornieren könnt ihr bis spätestens zwei Wochen vor dem Termin. Danach wird die Anzahlung nicht erstattet.</li>
+            <li>Nach vollständiger Zahlung ist keine kostenlose Stornierung mehr möglich.</li>
+            <li>Die Mietzeit zählt ab dem Moment, in dem ihr den Schlüssel abholt, bis ihr ihn wieder in den Safe legt.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
