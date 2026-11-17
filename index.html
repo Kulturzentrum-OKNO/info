@@ -27,6 +27,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--paper); color: var(--ink); }
 body { font-family: var(--font); font-size: 17px; line-height: 1.55; text-align: left; }
+main p, main li, .lead { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.social, .actions, .meta, .where, .rent-cols p { text-align: left; }
 a { color: inherit; }
 a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
@@ -119,8 +121,8 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .prices th { font-weight: 700; padding-right: 16px; }
 .prices td:last-child { white-space: nowrap; }
 .social { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-weight: 600; font-size: 15px; }
-.space { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 14px 0 6px; }
-.space > * { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #111; }
+.space { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0 6px; }
+.space > * { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; background: #111; }
 .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 28px; }
 .pack { border: 2px solid var(--ink); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
 .pack.c-peach { background: var(--peach); } .pack.c-lilac { background: var(--lilac); } .pack.c-blue { background: var(--blue); }
@@ -282,10 +284,10 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
       <h3 class="s">Что вас ждёт</h3>
       <p style="margin:0">Двухэтажное пространство, в зале до 40 зрителей. Есть проектор, экран и аудиосистема.</p>
       <div class="space">
-        <video src="img/hall.mp4" poster="img/hall_poster.jpg" autoplay muted loop playsinline aria-label="Зал OKNO с открытыми окнами"></video>
-        <img src="img/s_window.jpg" alt="Вечерний зал: ступени и большое окно" loading="lazy">
-        <img src="img/s_screen.jpg" alt="Лекция: проектор и экран" loading="lazy">
-        <img src="img/s_hall.jpg" alt="Полный зал на лекции" loading="lazy">
+        <img src="img/r_hall.jpg" alt="Зал OKNO: большое окно, свет и винтовая лестница на второй этаж" loading="lazy">
+        <img src="img/r_window.jpg" alt="Ступени-трибуна для зрителей у окна" loading="lazy">
+        <img src="img/r_lounge.jpg" alt="Второй этаж: лаунж с диваном и креслом" loading="lazy">
+        <img src="img/r_kitchen.jpg" alt="Кухня" loading="lazy">
       </div>
       <h3 class="s">Выберите свой формат (от 2 часов)</h3>
       <div class="packs">
