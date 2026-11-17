@@ -118,6 +118,9 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .prices th, .prices td { padding: 10px 0; border-bottom: 1px solid var(--soft); vertical-align: top; text-align: left; }
 .prices th { font-weight: 700; padding-right: 16px; }
 .prices td:last-child { white-space: nowrap; }
+.social { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-weight: 600; font-size: 15px; }
+.space { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 14px 0 6px; }
+.space > * { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #111; }
 .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 28px; }
 .pack { border: 2px solid var(--ink); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
 .pack.c-peach { background: var(--peach); } .pack.c-lilac { background: var(--lilac); } .pack.c-blue { background: var(--blue); }
@@ -167,9 +170,9 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
     <a class="brand" href="#top"><img src="logo.png" alt="OKNO"><span>Kulturzentrum</span></a>
     <nav aria-label="Меню">
       <a href="#afisha">Афиша</a>
+      <a href="#miete">Аренда</a>
       <a href="#kurse">Курсы</a>
       <a href="#pravila">Правила</a>
-      <a href="#miete">Аренда</a>
       <a href="#kontakt">Контакты</a>
       <a class="lang" href="de.html" lang="de" hreflang="de">DE</a>
     </nav>
@@ -181,12 +184,12 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
     <div>
     <h1>Kulturzentrum OKNO</h1>
     <p class="where">Brunnenstraße 69 <span>·</span> Berlin-Mitte <span>·</span> U8 Voltastraße</p>
-    <p class="lead">Курсы для детей и взрослых, лекции, концерты и кино в Берлин-Митте. Занятия и события на русском языке, немецкоязычные группы открываем по запросу.</p>
+    <p class="lead">Площадка для лекций, концертов, кино и встреч в Берлин-Митте: двухэтажное пространство и зал до 40 зрителей. А ещё курсы для детей и взрослых.</p>
     <div class="actions">
-      <a class="btn" href="https://www.instagram.com/okno_kultur">Наш Instagram</a>
-      <a class="btn" href="https://t.me/okno_kultur">Наш Telegram</a>
-      <a class="btn ghost" href="#kontakt">Как нас найти</a>
+      <a class="btn" href="#miete">Арендовать пространство</a>
+      <a class="btn ghost" href="#kurse">Наши курсы</a>
     </div>
+    <p class="social"><a href="https://www.instagram.com/okno_kultur">Instagram</a><a href="https://t.me/okno_kultur">Telegram</a><a href="#kontakt">Как нас найти</a></p>
     </div>
   </div>
 
@@ -230,7 +233,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
       <details class="ev plain">
         <summary>
           <span class="date">21.11<small>СБ · 18:30</small></span>
-          <span><span class="title">Кинолекция от Easy Pieces</span><span class="meta">Тему объявим позже</span></span>
+          <span><span class="title">Кинолекция от Easy Pieces</span><span class="meta">Тему объявим позже · <a href="https://www.instagram.com/5easy_pieces/">киноклуб в Instagram</a></span></span>
         </summary>
       </details>
 
@@ -268,7 +271,49 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
         </div>
       </details>
 
-      <p class="note">Билеты на лекции продаются на <a href="https://fienta.com/?q=OKNO">Fienta</a>, ссылка также есть в профиле <a href="https://www.instagram.com/okno_kultur/">Instagram</a>. Новые события и точные даты появляются там же. Кино в OKNO проходит вместе с киноклубом Easy Pieces.</p>
+      <p class="note">Билеты можно купить по ссылке в карточке события. Новые события и даты мы публикуем здесь, на сайте, и в наших соцсетях: <a href="https://www.instagram.com/okno_kultur">Instagram</a> и <a href="https://t.me/okno_kultur">Telegram</a>.</p>
+    </div>
+  </section>
+
+  <section id="miete">
+    <div class="wrap">
+      <h2>Пространство OKNO для ваших идей</h2>
+      <p class="lead" style="margin-bottom:10px">OKNO — это уютная площадка, которую вы можете использовать для своих лекций, мастер-классов, концертов, встреч и показов. Мы с радостью дадим вам место и время и, если нужно, поможем с организацией.</p>
+      <h3 class="s">Что вас ждёт</h3>
+      <p style="margin:0">Двухэтажное пространство, в зале до 40 зрителей. Есть проектор, экран и аудиосистема.</p>
+      <div class="space">
+        <video src="img/hall.mp4" poster="img/hall_poster.jpg" autoplay muted loop playsinline aria-label="Зал OKNO с открытыми окнами"></video>
+        <img src="img/s_window.jpg" alt="Вечерний зал: ступени и большое окно" loading="lazy">
+        <img src="img/s_screen.jpg" alt="Лекция: проектор и экран" loading="lazy">
+        <img src="img/s_hall.jpg" alt="Полный зал на лекции" loading="lazy">
+      </div>
+      <h3 class="s">Выберите свой формат (от 2 часов)</h3>
+      <div class="packs">
+        <div class="pack c-peach"><span class="ico">🔑</span><h3>Просто зал</h3><div class="pp">20 € <small>/ час</small></div><p>Для тех, кто всё сделает сам. Мы даём пространство, а вы наполняете его своим событием. Без техники и без рекламы с нашей стороны.</p></div>
+        <div class="pack c-lilac"><span class="ico">🎬</span><h3>Зал с техникой</h3><div class="pp">30 € <small>/ час</small></div><p>Всё то же, плюс проектор, экран и звук. Идеально для лекций, показов и презентаций, которые вы продвигаете сами.</p></div>
+        <div class="pack c-blue"><span class="ico">✨</span><h3>Всё включено</h3><div class="pp">50 € <small>/ час</small></div><p>Зал, техника и наша поддержка: расскажем о вас в Instagram, Telegram и на сайте, добавим в наши дайджесты, поделимся с партнёрами, возьмём на себя продажу билетов.</p></div>
+      </div>
+      <div class="rent-cols">
+        <div>
+          <h3>Можно добавить</h3>
+          <ul>
+            <li>Администратор, который встретит гостей и будет рядом всё мероприятие: 50 € за любое время.</li>
+            <li>Таргетированная реклама: обсудим бюджет вместе.</li>
+          </ul>
+          <h3>Как забронировать</h3>
+          <p style="margin:0">Напишите нам, и мы подберём для вас дату: <a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a> · <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a> · <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
+        </div>
+        <div>
+          <h3>Правила брони и отмены</h3>
+          <ul>
+            <li>Чтобы закрепить дату, вносится предоплата 50% стоимости.</li>
+            <li>Оставшиеся 50% вносятся за неделю до мероприятия.</li>
+            <li>Отменить бронь бесплатно можно не позднее чем за две недели до даты. Позже предоплата не возвращается.</li>
+            <li>После полной оплаты бесплатная отмена невозможна.</li>
+            <li>Время аренды считается с момента, когда вы забираете ключ, до момента, когда возвращаете его в сейф.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -410,42 +455,6 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
           </ul>
         </div>
       </details>
-    </div>
-  </section>
-
-  <section id="miete">
-    <div class="wrap">
-      <h2>Пространство OKNO для ваших идей</h2>
-      <p class="lead" style="margin-bottom:10px">OKNO — это уютная площадка, которую вы можете использовать для своих лекций, мастер-классов, концертов, встреч и показов. Мы с радостью дадим вам место и время и, если нужно, поможем с организацией.</p>
-      <h3 class="s">Что вас ждёт</h3>
-      <p style="margin:0">Двухэтажное пространство, в зале до 40 зрителей. Есть проектор, экран и аудиосистема.</p>
-      <h3 class="s">Выберите свой формат (от 2 часов)</h3>
-      <div class="packs">
-        <div class="pack c-peach"><span class="ico">🔑</span><h3>Просто зал</h3><div class="pp">20 € <small>/ час</small></div><p>Для тех, кто всё сделает сам. Мы даём пространство, а вы наполняете его своим событием. Без техники и без рекламы с нашей стороны.</p></div>
-        <div class="pack c-lilac"><span class="ico">🎬</span><h3>Зал с техникой</h3><div class="pp">30 € <small>/ час</small></div><p>Всё то же, плюс проектор, экран и звук. Идеально для лекций, показов и презентаций, которые вы продвигаете сами.</p></div>
-        <div class="pack c-blue"><span class="ico">✨</span><h3>Всё включено</h3><div class="pp">50 € <small>/ час</small></div><p>Зал, техника и наша поддержка: расскажем о вас в Instagram, Telegram и на сайте, добавим в наши дайджесты, поделимся с партнёрами, возьмём на себя продажу билетов.</p></div>
-      </div>
-      <div class="rent-cols">
-        <div>
-          <h3>Можно добавить</h3>
-          <ul>
-            <li>Администратор, который встретит гостей и будет рядом всё мероприятие: 50 € за любое время.</li>
-            <li>Таргетированная реклама: обсудим бюджет вместе.</li>
-          </ul>
-          <h3>Как забронировать</h3>
-          <p style="margin:0">Напишите нам, и мы подберём для вас дату: <a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a> · <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a> · <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
-        </div>
-        <div>
-          <h3>Правила брони и отмены</h3>
-          <ul>
-            <li>Чтобы закрепить дату, вносится предоплата 50% стоимости.</li>
-            <li>Оставшиеся 50% вносятся за неделю до мероприятия.</li>
-            <li>Отменить бронь бесплатно можно не позднее чем за две недели до даты. Позже предоплата не возвращается.</li>
-            <li>После полной оплаты бесплатная отмена невозможна.</li>
-            <li>Время аренды считается с момента, когда вы забираете ключ, до момента, когда возвращаете его в сейф.</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 

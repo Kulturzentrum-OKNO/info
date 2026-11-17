@@ -118,6 +118,9 @@ details[open] > summary { border-bottom: 2px solid var(--ink); }
 .prices th, .prices td { padding: 10px 0; border-bottom: 1px solid var(--soft); vertical-align: top; text-align: left; }
 .prices th { font-weight: 700; padding-right: 16px; }
 .prices td:last-child { white-space: nowrap; }
+.social { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-weight: 600; font-size: 15px; }
+.space { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 14px 0 6px; }
+.space > * { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #111; }
 .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 28px; }
 .pack { border: 2px solid var(--ink); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; }
 .pack.c-peach { background: var(--peach); } .pack.c-lilac { background: var(--lilac); } .pack.c-blue { background: var(--blue); }
@@ -167,9 +170,9 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
     <a class="brand" href="#top"><img src="logo.png" alt="OKNO"><span>Kulturzentrum</span></a>
     <nav aria-label="Menü">
       <a href="#afisha">Programm</a>
+      <a href="#miete">Raummiete</a>
       <a href="#kurse">Kurse</a>
       <a href="#pravila">Regeln</a>
-      <a href="#miete">Raummiete</a>
       <a href="#kontakt">Kontakt</a>
       <a class="lang" href="./" lang="ru" hreflang="ru">RU</a>
     </nav>
@@ -181,12 +184,12 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
     <div>
     <h1>Kulturzentrum OKNO</h1>
     <p class="where">Brunnenstraße 69 <span>·</span> Berlin-Mitte <span>·</span> U8 Voltastraße</p>
-    <p class="lead">Kurse für Kinder und Erwachsene, Vorträge, Konzerte und Kino in Berlin-Mitte. Unsere Kurse und Veranstaltungen finden auf Russisch statt, deutschsprachige Gruppen eröffnen wir auf Anfrage.</p>
+    <p class="lead">Ein Ort für Vorträge, Konzerte, Kino und Treffen in Berlin-Mitte: zwei Etagen und ein Saal für bis zu 40 Gäste. Dazu Kurse für Kinder und Erwachsene.</p>
     <div class="actions">
-      <a class="btn" href="https://www.instagram.com/okno_kultur">Unser Instagram</a>
-      <a class="btn" href="https://t.me/okno_kultur">Unser Telegram</a>
-      <a class="btn ghost" href="#kontakt">So findet ihr uns</a>
+      <a class="btn" href="#miete">Raum mieten</a>
+      <a class="btn ghost" href="#kurse">Unsere Kurse</a>
     </div>
+    <p class="social"><a href="https://www.instagram.com/okno_kultur">Instagram</a><a href="https://t.me/okno_kultur">Telegram</a><a href="#kontakt">So findet ihr uns</a></p>
     </div>
   </div>
 
@@ -230,7 +233,7 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
       <details class="ev plain">
         <summary>
           <span class="date">21.11<small>SA · 18:30</small></span>
-          <span><span class="title">Filmvortrag von Easy Pieces</span><span class="meta">Das Thema geben wir bald bekannt</span></span>
+          <span><span class="title">Filmvortrag von Easy Pieces</span><span class="meta">Das Thema geben wir bald bekannt · <a href="https://www.instagram.com/5easy_pieces/">Filmclub auf Instagram</a></span></span>
         </summary>
       </details>
 
@@ -268,7 +271,49 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
         </div>
       </details>
 
-      <p class="note">Tickets für die Vorträge gibt es auf <a href="https://fienta.com/?q=OKNO">Fienta</a>, der Link steht auch in unserem <a href="https://www.instagram.com/okno_kultur/">Instagram</a>-Profil. Neue Termine findet ihr ebenfalls dort. Kino im OKNO machen wir gemeinsam mit dem Filmclub Easy Pieces.</p>
+      <p class="note">Tickets bekommt ihr über den Link beim jeweiligen Termin. Neue Veranstaltungen und Termine veröffentlichen wir hier auf der Website und in unseren Kanälen: <a href="https://www.instagram.com/okno_kultur">Instagram</a> und <a href="https://t.me/okno_kultur">Telegram</a>.</p>
+    </div>
+  </section>
+
+  <section id="miete">
+    <div class="wrap">
+      <h2>Der Raum von OKNO für eure Ideen</h2>
+      <p class="lead" style="margin-bottom:10px">OKNO ist ein gemütlicher Ort, den ihr für eure Vorträge, Workshops, Konzerte, Treffen und Vorführungen nutzen könnt. Wir geben euch gern Raum und Zeit und helfen, wenn ihr möchtet, auch bei der Organisation.</p>
+      <h3 class="s">Was euch erwartet</h3>
+      <p style="margin:0">Ein Raum auf zwei Etagen, im Saal bis zu 40 Gäste. Beamer, Leinwand und Tonanlage sind vorhanden.</p>
+      <div class="space">
+        <video src="img/hall.mp4" poster="img/hall_poster.jpg" autoplay muted loop playsinline aria-label="Der Saal von OKNO mit offenen Fenstern"></video>
+        <img src="img/s_window.jpg" alt="Der Saal am Abend: Stufen und großes Fenster" loading="lazy">
+        <img src="img/s_screen.jpg" alt="Vortrag mit Beamer und Leinwand" loading="lazy">
+        <img src="img/s_hall.jpg" alt="Voller Saal bei einem Vortrag" loading="lazy">
+      </div>
+      <h3 class="s">Wählt euer Format (ab 2 Stunden)</h3>
+      <div class="packs">
+        <div class="pack c-peach"><span class="ico">🔑</span><h3>Nur der Saal</h3><div class="pp">20 € <small>/ Stunde</small></div><p>Für alle, die alles selbst machen. Wir geben euch den Raum, ihr füllt ihn mit eurer Veranstaltung. Ohne Technik und ohne Werbung von unserer Seite.</p></div>
+        <div class="pack c-lilac"><span class="ico">🎬</span><h3>Saal mit Technik</h3><div class="pp">30 € <small>/ Stunde</small></div><p>Alles wie oben, plus Beamer, Leinwand und Ton. Ideal für Vorträge, Vorführungen und Präsentationen, die ihr selbst bewerbt.</p></div>
+        <div class="pack c-blue"><span class="ico">✨</span><h3>Alles inklusive</h3><div class="pp">50 € <small>/ Stunde</small></div><p>Saal, Technik und unsere Unterstützung: Wir erzählen auf Instagram, Telegram und der Website von euch, nehmen euch in unsere Digests auf, teilen es mit unseren Partnern und übernehmen den Ticketverkauf.</p></div>
+      </div>
+      <div class="rent-cols">
+        <div>
+          <h3>Dazu buchbar</h3>
+          <ul>
+            <li>Eine Person vor Ort, die eure Gäste empfängt und während der ganzen Veranstaltung da ist: 50 € pauschal.</li>
+            <li>Gezielte Online-Werbung: Das Budget besprechen wir gemeinsam.</li>
+          </ul>
+          <h3>So bucht ihr</h3>
+          <p style="margin:0">Schreibt uns, und wir finden einen Termin für euch: <a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a> · <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a> · <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
+        </div>
+        <div>
+          <h3>Buchung und Stornierung</h3>
+          <ul>
+            <li>Um den Termin zu sichern, zahlt ihr 50 % des Preises an.</li>
+            <li>Die restlichen 50 % zahlt ihr eine Woche vor der Veranstaltung.</li>
+            <li>Kostenlos stornieren könnt ihr bis spätestens zwei Wochen vor dem Termin. Danach wird die Anzahlung nicht erstattet.</li>
+            <li>Nach vollständiger Zahlung ist keine kostenlose Stornierung mehr möglich.</li>
+            <li>Die Mietzeit zählt ab dem Moment, in dem ihr den Schlüssel abholt, bis ihr ihn wieder in den Safe legt.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -410,42 +455,6 @@ footer { border-top: 2px solid var(--ink); padding: 24px 0 40px; font-size: 14px
           </ul>
         </div>
       </details>
-    </div>
-  </section>
-
-  <section id="miete">
-    <div class="wrap">
-      <h2>Der Raum von OKNO für eure Ideen</h2>
-      <p class="lead" style="margin-bottom:10px">OKNO ist ein gemütlicher Ort, den ihr für eure Vorträge, Workshops, Konzerte, Treffen und Vorführungen nutzen könnt. Wir geben euch gern Raum und Zeit und helfen, wenn ihr möchtet, auch bei der Organisation.</p>
-      <h3 class="s">Was euch erwartet</h3>
-      <p style="margin:0">Ein Raum auf zwei Etagen, im Saal bis zu 40 Gäste. Beamer, Leinwand und Tonanlage sind vorhanden.</p>
-      <h3 class="s">Wählt euer Format (ab 2 Stunden)</h3>
-      <div class="packs">
-        <div class="pack c-peach"><span class="ico">🔑</span><h3>Nur der Saal</h3><div class="pp">20 € <small>/ Stunde</small></div><p>Für alle, die alles selbst machen. Wir geben euch den Raum, ihr füllt ihn mit eurer Veranstaltung. Ohne Technik und ohne Werbung von unserer Seite.</p></div>
-        <div class="pack c-lilac"><span class="ico">🎬</span><h3>Saal mit Technik</h3><div class="pp">30 € <small>/ Stunde</small></div><p>Alles wie oben, plus Beamer, Leinwand und Ton. Ideal für Vorträge, Vorführungen und Präsentationen, die ihr selbst bewerbt.</p></div>
-        <div class="pack c-blue"><span class="ico">✨</span><h3>Alles inklusive</h3><div class="pp">50 € <small>/ Stunde</small></div><p>Saal, Technik und unsere Unterstützung: Wir erzählen auf Instagram, Telegram und der Website von euch, nehmen euch in unsere Digests auf, teilen es mit unseren Partnern und übernehmen den Ticketverkauf.</p></div>
-      </div>
-      <div class="rent-cols">
-        <div>
-          <h3>Dazu buchbar</h3>
-          <ul>
-            <li>Eine Person vor Ort, die eure Gäste empfängt und während der ganzen Veranstaltung da ist: 50 € pauschal.</li>
-            <li>Gezielte Online-Werbung: Das Budget besprechen wir gemeinsam.</li>
-          </ul>
-          <h3>So bucht ihr</h3>
-          <p style="margin:0">Schreibt uns, und wir finden einen Termin für euch: <a href="https://www.instagram.com/okno_kultur/">Instagram @okno_kultur</a> · <a href="https://t.me/okno_kultur_admin">Telegram @okno_kultur_admin</a> · <a href="mailto:okno@bgff.de">okno@bgff.de</a></p>
-        </div>
-        <div>
-          <h3>Buchung und Stornierung</h3>
-          <ul>
-            <li>Um den Termin zu sichern, zahlt ihr 50 % des Preises an.</li>
-            <li>Die restlichen 50 % zahlt ihr eine Woche vor der Veranstaltung.</li>
-            <li>Kostenlos stornieren könnt ihr bis spätestens zwei Wochen vor dem Termin. Danach wird die Anzahlung nicht erstattet.</li>
-            <li>Nach vollständiger Zahlung ist keine kostenlose Stornierung mehr möglich.</li>
-            <li>Die Mietzeit zählt ab dem Moment, in dem ihr den Schlüssel abholt, bis ihr ihn wieder in den Safe legt.</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
